@@ -83,7 +83,7 @@ export default class Circle extends Component {
         {
           "name": "color",
           "type": "ordinal",
-          "range": {"scheme": "category20"}
+          "range": {"scheme": "pastel1"}
         }
       ],
     

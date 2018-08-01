@@ -5,6 +5,8 @@ import Circle from './circle_sum'
 import Month from './month_sum'
 import Week from './week_sum'
 import Hour from './hour_sum'
+import Shimmer from './shimmer' 
+
 class App extends Component {
   constructor(props) {
     super(props)

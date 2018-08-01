@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import { createClassFromSpec } from 'react-vega'
+import Shimmer from '../shimmer' 
 
 export default class Circle extends Component {
     constructor(props) {
         super(props)
         this.state = {
             url: 'http://localhost:5000',
-            data : {}
+            data : undefined
         }
     }
 
@@ -35,19 +36,18 @@ export default class Circle extends Component {
                         <span>
                             Xuân: 
                         </span>
-                        {this.state.data.xuan}
                     </div>
                     <div>
                         <span>
                             Loan: 
                         </span>
-                        {this.state.data.loan}
                     </div>
                 </div>
           </div>
         );
       }
     createView() {
+        if (!this.state.data) return <Shimmer />
         const CustomizedChart = this.generateSpec()
         return <CustomizedChart
             renderer = "canvas"

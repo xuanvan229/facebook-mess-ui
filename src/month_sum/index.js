@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import { createClassFromSpec } from 'react-vega'
+import Shimmer from '../shimmer' 
 
 export default class Month extends Component {
     constructor(props) {
@@ -38,7 +39,7 @@ export default class Month extends Component {
     }
 
     createView() {
-        if (!this.state.month) return null
+        if (!this.state.month) return <Shimmer />
         const CustomizedChart = this.generateSpec()
         return <CustomizedChart
             renderer = "canvas"
